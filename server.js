@@ -1,21 +1,16 @@
+let dotenv = require('dotenv');
 let express = require('express');
-let mongoose = require('mongoose');
-require('./course');
+let db = require('./db')
 
+dotenv.config();
 
 let app = express();
+let PORT = process.env.PORT ;
 
-mongoose.connect('mongodb://localhost/test')
-    .then(() => {
-        console.log("¡Conexión exitosa a la base de datos!");
-
-    })
-    .catch((err) => {
-        console.error("Error al conectar a la base de datos:", err);
-    });
+db();
 
 app.get("/", (req, res) => {
     res.send("Hello World!")
 });
 
-app.listen(8080, () => console.log("Server started in the port 8080!"));
+app.listen(PORT, () => console.log(`Server started in the port ${PORT}`));

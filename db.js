@@ -1,6 +1,6 @@
 let express = require('express');
 let mongoose = require('mongoose');
-require('./course');
+
 let dotenv = require('dotenv');
 
 dotenv.config();

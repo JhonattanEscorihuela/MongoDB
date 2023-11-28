@@ -1,12 +1,10 @@
 let express = require('express');
 let mongoose = require('mongoose');
-
 let dotenv = require('dotenv');
 
 dotenv.config();
 
 let MONGODB_URL = process.env.URL_MONGODB;
-
 
 let db = async () => {
     try {
@@ -16,7 +14,6 @@ let db = async () => {
         console.error(error);
     }
 }
-
 
 module.exports = db;
 

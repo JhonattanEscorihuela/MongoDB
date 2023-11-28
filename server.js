@@ -75,7 +75,6 @@ app.put("/cursos/:id", (req, res) => {
 
     // 3. Encontrar primero el documento y luego guardarlo
 
-
 });
 
 app.delete("/cursos/:id", (req, res) => {
@@ -100,7 +99,6 @@ app.delete("/cursos/:id", (req, res) => {
 
     // 3. Encontrar primero el documento y luego eliminarlo
 
-
 });
 
 app.post('/cursos', (req, res) => {
@@ -117,7 +115,6 @@ app.post('/cursos', (req, res) => {
             res.json(error)
         })
 });
-
 
 app.post('/videos', (req, res) => {
     Video.create({
@@ -138,7 +135,6 @@ app.post('/videos', (req, res) => {
             res.json(error);
         })
 })
-
 
 app.get('/videos', (req, res) => {
     Video.find()

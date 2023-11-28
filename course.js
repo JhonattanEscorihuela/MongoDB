@@ -2,9 +2,7 @@ let mongoose = require("mongoose");
 let slugify = require("slugify");
 let isMail = require('validator');
 
-
 //  1. Definir el esquema
-
 
 let courseSchema = new mongoose.Schema({
     // id: ObjectId -> Identificador unico de tu documento
@@ -56,14 +54,12 @@ deleteOne
 init => sync
 */
 
-
 courseSchema.pre('validate', function (next) {
     //Curso profesional de Moongose
     // curso-profesional-moongose
     this.slug = slugify(this.title);
     next();
 });
-
 
 // 2. Definir el modelo
 
